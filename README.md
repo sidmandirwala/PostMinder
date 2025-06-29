@@ -43,8 +43,9 @@ To run the project locally, follow these steps:
    **Required `.env` Files**:
    - **Root `.env`**: Located at the project root.
    - **Server `.env`**: Located in the `server/` directory.
-   
->  **_BullMQ:_** The `BullMQ/.env` file is preconfigured and does not require changes for standard use.
+
+>  [!NOTE]   
+>  The `BullMQ/.env` file is preconfigured and does not require changes for standard use.
 
    **Use `.example-env` Files**:
    - Each `.env` file has a corresponding `.example-env` file to guide setup.
