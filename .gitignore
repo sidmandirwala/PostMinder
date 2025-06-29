@@ -23,4 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
+# Ignore all .env files
+*.env
+
+# But keep BullMQ/.env tracked
+!BullMQ/.env
