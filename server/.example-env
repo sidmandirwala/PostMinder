@@ -1,0 +1,22 @@
+# Example .env file
+PORT=3000
+BCRYPT_SALT=10
+
+POSTMINDER_ACCESS_TOKEN_SECRET=your_secret_here
+POSTMINDER_REFRESH_TOKEN_SECRET=your_secret_here
+
+FACEBOOK_APP_ID=your_app_id
+FACEBOOK_APP_SECRET=your_app_secret
+
+POSTGRES_HOST=your_host
+POSTGRES_USER=your_user
+POSTGRES_PASSWORD=your_password
+POSTGRES_DATABASE=your_database
+POSTGRES_PORT=5432
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+FRONTEND_URL=https://localhost:8080
+BULLMQ_URL=https://postminder-bullmq-container:3001
