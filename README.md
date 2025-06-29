@@ -38,6 +38,25 @@ To run the project locally, follow these steps:
    ```sh
    cd PostMinder
    ```
+3. This project uses `.env` files for configuration. To set up your environment:
+
+   **Required `.env` Files**:
+   - **Root `.env`**: Located at the project root.
+   - **Server `.env`**: Located in the `server/` directory.
+   
+   **BullMQ Note**:
+   The `BullMQ/.env` file is preconfigured and does not require changes for standard use.
+
+   **Use `.example-env` Files**:
+   - Each `.env` file has a corresponding `.example-env` file to guide setup.
+   - Copy the templates and rename them to `.env`:
+     ```bash
+     cp .example-env .env
+     cp server/.example-env server/.env
+     ```
+
+   **Populate `.env` Files**:
+   - Fill the required values based on your application setup.
 
 3. Start the application using Docker Compose:
 
