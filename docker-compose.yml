@@ -1,0 +1,56 @@
+version: '3'
+services:
+    postgres:
+        image: postgres
+        container_name: psql
+        environment:
+            - POSTGRES_PASSWORD=postgres
+        networks: 
+            - postminder-network
+        volumes:
+            - ./postgresql:/docker-entrypoint-initdb.d
+
+    redis:
+        image: redis
+        container_name: rdb
+        networks: 
+            - postminder-network
+
+    backend:
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        container_name: postminder-backend-container
+        command: node index.js
+        networks: 
+            - postminder-network
+        ports:
+            - "3000:3000"
+        depends_on:
+            - postgres
+
+    frontend:
+        build: .
+        container_name: postminder-frontend-container
+        command: yarn dev
+        networks: 
+            - postminder-network
+        ports:
+            - "8080:8080"
+        depends_on:
+            - backend
+
+    bullmq:
+        build:
+            context: ./BullMQ
+            dockerfile: Dockerfile
+        container_name: postminder-bullmq-container
+        command: node index.js
+        networks: 
+            - postminder-network
+        depends_on:
+            - redis
+
+networks:
+    postminder-network:
+        driver: bridge
